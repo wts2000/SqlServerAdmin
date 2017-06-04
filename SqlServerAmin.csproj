@@ -1,0 +1,926 @@
+﻿<Project DefaultTargets="Build" ToolsVersion="3.5" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{04126A56-F219-4AB1-A174-CE2CEC644690}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ApplicationIcon>
+    </ApplicationIcon>
+    <AssemblyKeyContainerName>
+    </AssemblyKeyContainerName>
+    <AssemblyName>SqlServerAmin</AssemblyName>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+    <DefaultClientScript>JScript</DefaultClientScript>
+    <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
+    <DefaultTargetSchema>IE50</DefaultTargetSchema>
+    <DelaySign>false</DelaySign>
+    <OutputType>Library</OutputType>
+    <RootNamespace>SqlServerAmin</RootNamespace>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+    <StartupObject>
+    </StartupObject>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugSymbols>true</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>false</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>full</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>TRACE</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugSymbols>false</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>true</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>none</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="SqlAdmin">
+      <Name>SqlAdmin</Name>
+      <HintPath>SQL管理\SqlAdmin.dll</HintPath>
+    </Reference>
+    <Reference Include="System">
+      <Name>System</Name>
+    </Reference>
+    <Reference Include="System.Core, Version=3.5.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data">
+      <Name>System.Data</Name>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions, Version=3.5.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <Name>System.Drawing</Name>
+    </Reference>
+    <Reference Include="System.Web">
+      <Name>System.Web</Name>
+    </Reference>
+    <Reference Include="System.Web.Extensions, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web.Extensions.Design, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Name>System.XML</Name>
+    </Reference>
+    <Reference Include="System.Xml.Linq, Version=3.5.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="index.aspx.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="index.aspx.designer.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SqlAdmin\Columns.aspx.cs">
+      <DependentUpon>Columns.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SqlAdmin\Columns.aspx.designer.cs">
+      <DependentUpon>Columns.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SqlAdmin\CreateDatabase.aspx.cs">
+      <DependentUpon>CreateDatabase.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SqlAdmin\CreateDatabase.aspx.designer.cs">
+      <DependentUpon>CreateDatabase.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SqlAdmin\CreateDatabaseRole.aspx.cs">
+      <DependentUpon>CreateDatabaseRole.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SqlAdmin\CreateDatabaseRole.aspx.designer.cs">
+      <DependentUpon>CreateDatabaseRole.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SqlAdmin\CreateDatabaseUser.aspx.cs">
+      <DependentUpon>CreateDatabaseUser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SqlAdmin\CreateDatabaseUser.aspx.designer.cs">
+      <DependentUpon>CreateDatabaseUser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SqlAdmin\CreateLogin.aspx.cs">
+      <DependentUpon>CreateLogin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SqlAdmin\CreateLogin.aspx.designer.cs">
+      <DependentUpon>CreateLogin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SqlAdmin\CreateStoredProcedure.aspx.cs">
+      <DependentUpon>CreateStoredProcedure.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SqlAdmin\CreateStoredProcedure.aspx.designer.cs">
+      <DependentUpon>CreateStoredProcedure.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SqlAdmin\CreateTable.aspx.cs">
+      <DependentUpon>CreateTable.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SqlAdmin\CreateTable.aspx.designer.cs">
+      <DependentUpon>CreateTable.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SqlAdmin\DatabaseProperties.aspx.cs">
+      <DependentUpon>DatabaseProperties.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SqlAdmin\DatabaseProperties.aspx.designer.cs">
+      <DependentUpon>DatabaseProperties.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SqlAdmin\DatabaseRoles.aspx.cs">
+      <DependentUpon>DatabaseRoles.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SqlAdmin\DatabaseRoles.aspx.designer.cs">
+      <DependentUpon>DatabaseRoles.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SqlAdmin\Databases.aspx.cs">
+      <DependentUpon>Databases.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SqlAdmin\Databases.aspx.designer.cs">
+      <DependentUpon>Databases.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SqlAdmin\DatabaseUsers.aspx.cs">
+      <DependentUpon>DatabaseUsers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SqlAdmin\DatabaseUsers.aspx.designer.cs">
+      <DependentUpon>DatabaseUsers.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SqlAdmin\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SqlAdmin\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SqlAdmin\DeleteColumn.aspx.cs">
+      <DependentUpon>DeleteColumn.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SqlAdmin\DeleteColumn.aspx.designer.cs">
+      <DependentUpon>DeleteColumn.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SqlAdmin\DeleteDatabase.aspx.cs">
+      <DependentUpon>DeleteDatabase.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SqlAdmin\DeleteDatabase.aspx.designer.cs">
+      <DependentUpon>DeleteDatabase.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SqlAdmin\DeleteDatabaseRole.aspx.cs">
+      <DependentUpon>DeleteDatabaseRole.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SqlAdmin\DeleteDatabaseRole.aspx.designer.cs">
+      <DependentUpon>DeleteDatabaseRole.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SqlAdmin\DeleteDatabaseUser.aspx.cs">
+      <DependentUpon>DeleteDatabaseUser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SqlAdmin\DeleteDatabaseUser.aspx.designer.cs">
+      <DependentUpon>DeleteDatabaseUser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SqlAdmin\DeleteStoredProcedure.aspx.cs">
+      <DependentUpon>DeleteStoredProcedure.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SqlAdmin\DeleteStoredProcedure.aspx.designer.cs">
+      <DependentUpon>DeleteStoredProcedure.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SqlAdmin\DeleteTable.aspx.cs">
+      <DependentUpon>DeleteTable.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SqlAdmin\DeleteTable.aspx.designer.cs">
+      <DependentUpon>DeleteTable.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SqlAdmin\EditColumn.aspx.cs">
+      <DependentUpon>EditColumn.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SqlAdmin\EditColumn.aspx.designer.cs">
+      <DependentUpon>EditColumn.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SqlAdmin\EditDatabaseRole.aspx.cs">
+      <DependentUpon>EditDatabaseRole.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SqlAdmin\EditDatabaseRole.aspx.designer.cs">
+      <DependentUpon>EditDatabaseRole.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SqlAdmin\EditDatabaseUser.aspx.cs">
+      <DependentUpon>EditDatabaseUser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SqlAdmin\EditDatabaseUser.aspx.designer.cs">
+      <DependentUpon>EditDatabaseUser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SqlAdmin\EditServerLogin.aspx.cs">
+      <DependentUpon>EditServerLogin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SqlAdmin\EditServerLogin.aspx.designer.cs">
+      <DependentUpon>EditServerLogin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SqlAdmin\EditServerRole.aspx.cs">
+      <DependentUpon>EditServerRole.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SqlAdmin\EditServerRole.aspx.designer.cs">
+      <DependentUpon>EditServerRole.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SqlAdmin\EditStoredProcedure.aspx.cs">
+      <DependentUpon>EditStoredProcedure.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SqlAdmin\EditStoredProcedure.aspx.designer.cs">
+      <DependentUpon>EditStoredProcedure.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SqlAdmin\Error.aspx.cs">
+      <DependentUpon>Error.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SqlAdmin\Error.aspx.designer.cs">
+      <DependentUpon>Error.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SqlAdmin\Export.aspx.cs">
+      <DependentUpon>Export.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SqlAdmin\Export.aspx.designer.cs">
+      <DependentUpon>Export.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SqlAdmin\FileProperties.ascx.cs">
+      <DependentUpon>FileProperties.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SqlAdmin\FileProperties.ascx.designer.cs">
+      <DependentUpon>FileProperties.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="SqlAdmin\Global.asax.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SqlAdmin\Help\Columns.aspx.cs">
+      <DependentUpon>Columns.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SqlAdmin\Help\Columns.aspx.designer.cs">
+      <DependentUpon>Columns.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SqlAdmin\Help\CreateDatabase.aspx.cs">
+      <DependentUpon>CreateDatabase.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SqlAdmin\Help\CreateDatabase.aspx.designer.cs">
+      <DependentUpon>CreateDatabase.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SqlAdmin\Help\CreateStoredProcedure.aspx.cs">
+      <DependentUpon>CreateStoredProcedure.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SqlAdmin\Help\CreateStoredProcedure.aspx.designer.cs">
+      <DependentUpon>CreateStoredProcedure.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SqlAdmin\Help\CreateTable.aspx.cs">
+      <DependentUpon>CreateTable.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SqlAdmin\Help\CreateTable.aspx.designer.cs">
+      <DependentUpon>CreateTable.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SqlAdmin\Help\DatabaseProperties.aspx.cs">
+      <DependentUpon>DatabaseProperties.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SqlAdmin\Help\DatabaseProperties.aspx.designer.cs">
+      <DependentUpon>DatabaseProperties.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SqlAdmin\Help\DatabaseRoles.aspx.cs">
+      <DependentUpon>DatabaseRoles.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SqlAdmin\Help\DatabaseRoles.aspx.designer.cs">
+      <DependentUpon>DatabaseRoles.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SqlAdmin\Help\Databases.aspx.cs">
+      <DependentUpon>Databases.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SqlAdmin\Help\Databases.aspx.designer.cs">
+      <DependentUpon>Databases.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SqlAdmin\Help\DatabaseUsers.aspx.cs">
+      <DependentUpon>DatabaseUsers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SqlAdmin\Help\DatabaseUsers.aspx.designer.cs">
+      <DependentUpon>DatabaseUsers.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SqlAdmin\Help\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SqlAdmin\Help\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SqlAdmin\Help\DeleteColumn.aspx.cs">
+      <DependentUpon>DeleteColumn.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SqlAdmin\Help\DeleteColumn.aspx.designer.cs">
+      <DependentUpon>DeleteColumn.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SqlAdmin\Help\DeleteDatabase.aspx.cs">
+      <DependentUpon>DeleteDatabase.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SqlAdmin\Help\DeleteDatabase.aspx.designer.cs">
+      <DependentUpon>DeleteDatabase.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SqlAdmin\Help\DeleteStoredProcedure.aspx.cs">
+      <DependentUpon>DeleteStoredProcedure.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SqlAdmin\Help\DeleteStoredProcedure.aspx.designer.cs">
+      <DependentUpon>DeleteStoredProcedure.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SqlAdmin\Help\DeleteTable.aspx.cs">
+      <DependentUpon>DeleteTable.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SqlAdmin\Help\DeleteTable.aspx.designer.cs">
+      <DependentUpon>DeleteTable.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SqlAdmin\Help\EditColumn.aspx.cs">
+      <DependentUpon>EditColumn.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SqlAdmin\Help\EditColumn.aspx.designer.cs">
+      <DependentUpon>EditColumn.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SqlAdmin\Help\EditStoredProcedure.aspx.cs">
+      <DependentUpon>EditStoredProcedure.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SqlAdmin\Help\EditStoredProcedure.aspx.designer.cs">
+      <DependentUpon>EditStoredProcedure.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SqlAdmin\Help\Error.aspx.cs">
+      <DependentUpon>Error.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SqlAdmin\Help\Error.aspx.designer.cs">
+      <DependentUpon>Error.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SqlAdmin\Help\Export.aspx.cs">
+      <DependentUpon>Export.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SqlAdmin\Help\Export.aspx.designer.cs">
+      <DependentUpon>Export.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SqlAdmin\Help\HelpFooter.ascx.cs">
+      <DependentUpon>HelpFooter.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SqlAdmin\Help\HelpFooter.ascx.designer.cs">
+      <DependentUpon>HelpFooter.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="SqlAdmin\Help\HelpHeader.ascx.cs">
+      <DependentUpon>HelpHeader.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SqlAdmin\Help\HelpHeader.ascx.designer.cs">
+      <DependentUpon>HelpHeader.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="SqlAdmin\Help\Import.aspx.cs">
+      <DependentUpon>Import.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SqlAdmin\Help\Import.aspx.designer.cs">
+      <DependentUpon>Import.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SqlAdmin\Help\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SqlAdmin\Help\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SqlAdmin\Help\QueryDatabase.aspx.cs">
+      <DependentUpon>QueryDatabase.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SqlAdmin\Help\QueryDatabase.aspx.designer.cs">
+      <DependentUpon>QueryDatabase.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SqlAdmin\Help\RenameTable.aspx.cs">
+      <DependentUpon>RenameTable.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SqlAdmin\Help\RenameTable.aspx.designer.cs">
+      <DependentUpon>RenameTable.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SqlAdmin\Help\Security.aspx.cs">
+      <DependentUpon>Security.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SqlAdmin\Help\Security.aspx.designer.cs">
+      <DependentUpon>Security.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SqlAdmin\Help\ServerLogins.aspx.cs">
+      <DependentUpon>ServerLogins.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SqlAdmin\Help\ServerLogins.aspx.designer.cs">
+      <DependentUpon>ServerLogins.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SqlAdmin\Help\ServerRoles.aspx.cs">
+      <DependentUpon>ServerRoles.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SqlAdmin\Help\ServerRoles.aspx.designer.cs">
+      <DependentUpon>ServerRoles.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SqlAdmin\Help\StoredProcedures.aspx.cs">
+      <DependentUpon>StoredProcedures.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SqlAdmin\Help\StoredProcedures.aspx.designer.cs">
+      <DependentUpon>StoredProcedures.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SqlAdmin\Help\Tables.aspx.cs">
+      <DependentUpon>Tables.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SqlAdmin\Help\Tables.aspx.designer.cs">
+      <DependentUpon>Tables.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SqlAdmin\Import.aspx.cs">
+      <DependentUpon>Import.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SqlAdmin\Import.aspx.designer.cs">
+      <DependentUpon>Import.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SqlAdmin\LoginRolePicker.ascx.cs">
+      <DependentUpon>LoginRolePicker.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SqlAdmin\LoginRolePicker.ascx.designer.cs">
+      <DependentUpon>LoginRolePicker.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="SqlAdmin\Logout.aspx.cs">
+      <DependentUpon>Logout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SqlAdmin\Logout.aspx.designer.cs">
+      <DependentUpon>Logout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SqlAdmin\QueryDatabase.aspx.cs">
+      <DependentUpon>QueryDatabase.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SqlAdmin\QueryDatabase.aspx.designer.cs">
+      <DependentUpon>QueryDatabase.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SqlAdmin\RenameTable.aspx.cs">
+      <DependentUpon>RenameTable.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SqlAdmin\RenameTable.aspx.designer.cs">
+      <DependentUpon>RenameTable.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SqlAdmin\Security.aspx.cs">
+      <DependentUpon>Security.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SqlAdmin\Security.aspx.designer.cs">
+      <DependentUpon>Security.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SqlAdmin\ServerLogins.aspx.cs">
+      <DependentUpon>ServerLogins.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SqlAdmin\ServerLogins.aspx.designer.cs">
+      <DependentUpon>ServerLogins.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SqlAdmin\ServerRoles.aspx.cs">
+      <DependentUpon>ServerRoles.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SqlAdmin\ServerRoles.aspx.designer.cs">
+      <DependentUpon>ServerRoles.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SqlAdmin\StoredProcedures.aspx.cs">
+      <DependentUpon>StoredProcedures.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SqlAdmin\StoredProcedures.aspx.designer.cs">
+      <DependentUpon>StoredProcedures.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SqlAdmin\Tables.aspx.cs">
+      <DependentUpon>Tables.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SqlAdmin\Tables.aspx.designer.cs">
+      <DependentUpon>Tables.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SqlAdmin\Toolbars\DatabaseLocation.ascx.cs">
+      <DependentUpon>DatabaseLocation.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SqlAdmin\Toolbars\DatabaseLocation.ascx.designer.cs">
+      <DependentUpon>DatabaseLocation.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="SqlAdmin\Toolbars\DatabaseToolbar.ascx.cs">
+      <DependentUpon>DatabaseToolbar.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SqlAdmin\Toolbars\DatabaseToolbar.ascx.designer.cs">
+      <DependentUpon>DatabaseToolbar.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="SqlAdmin\Toolbars\HelpLogoutToolbar.ascx.cs">
+      <DependentUpon>HelpLogoutToolbar.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SqlAdmin\Toolbars\HelpLogoutToolbar.ascx.designer.cs">
+      <DependentUpon>HelpLogoutToolbar.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="SqlAdmin\Toolbars\ServerLocation.ascx.cs">
+      <DependentUpon>ServerLocation.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SqlAdmin\Toolbars\ServerLocation.ascx.designer.cs">
+      <DependentUpon>ServerLocation.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="SqlAdmin\Toolbars\ServerToolbar.ascx.cs">
+      <DependentUpon>ServerToolbar.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SqlAdmin\Toolbars\ServerToolbar.ascx.designer.cs">
+      <DependentUpon>ServerToolbar.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="SqlAdmin\Toolbars\TableLocation.ascx.cs">
+      <DependentUpon>TableLocation.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SqlAdmin\Toolbars\TableLocation.ascx.designer.cs">
+      <DependentUpon>TableLocation.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="SqlAdmin\Toolbars\WebForm1.aspx.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SqlAdmin\Toolbars\WebForm1.aspx.designer.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+    </Compile>
+    <Content Include="Global.asax">
+      <SubType>Component</SubType>
+    </Content>
+    <Content Include="index.aspx">
+      <SubType>Form</SubType>
+    </Content>
+    <Content Include="SqlAdmin\admin.css" />
+    <Content Include="SqlAdmin\Columns.aspx" />
+    <Content Include="SqlAdmin\CreateDatabase.aspx" />
+    <Content Include="SqlAdmin\CreateDatabaseRole.aspx" />
+    <Content Include="SqlAdmin\CreateDatabaseUser.aspx" />
+    <Content Include="SqlAdmin\CreateLogin.aspx" />
+    <Content Include="SqlAdmin\CreateStoredProcedure.aspx" />
+    <Content Include="SqlAdmin\CreateTable.aspx" />
+    <Content Include="SqlAdmin\DatabaseProperties.aspx" />
+    <Content Include="SqlAdmin\DatabaseRoles.aspx" />
+    <Content Include="SqlAdmin\Databases.aspx" />
+    <Content Include="SqlAdmin\DatabaseUsers.aspx" />
+    <Content Include="SqlAdmin\Default.aspx" />
+    <Content Include="SqlAdmin\DeleteColumn.aspx" />
+    <Content Include="SqlAdmin\DeleteDatabase.aspx" />
+    <Content Include="SqlAdmin\DeleteDatabaseRole.aspx" />
+    <Content Include="SqlAdmin\DeleteDatabaseUser.aspx" />
+    <Content Include="SqlAdmin\DeleteStoredProcedure.aspx" />
+    <Content Include="SqlAdmin\DeleteTable.aspx" />
+    <Content Include="SqlAdmin\EditColumn.aspx" />
+    <Content Include="SqlAdmin\EditDatabaseRole.aspx" />
+    <Content Include="SqlAdmin\EditDatabaseUser.aspx" />
+    <Content Include="SqlAdmin\EditServerLogin.aspx" />
+    <Content Include="SqlAdmin\EditServerRole.aspx" />
+    <Content Include="SqlAdmin\EditStoredProcedure.aspx" />
+    <Content Include="SqlAdmin\Error.aspx" />
+    <Content Include="SqlAdmin\Export.aspx" />
+    <Content Include="SqlAdmin\FileProperties.ascx" />
+    <Content Include="SqlAdmin\Global.js" />
+    <Content Include="SqlAdmin\Help\admin.css" />
+    <Content Include="SqlAdmin\Help\Columns.aspx" />
+    <Content Include="SqlAdmin\Help\CreateDatabase.aspx" />
+    <Content Include="SqlAdmin\Help\CreateStoredProcedure.aspx" />
+    <Content Include="SqlAdmin\Help\CreateTable.aspx" />
+    <Content Include="SqlAdmin\Help\DatabaseProperties.aspx" />
+    <Content Include="SqlAdmin\Help\DatabaseRoles.aspx" />
+    <Content Include="SqlAdmin\Help\Databases.aspx" />
+    <Content Include="SqlAdmin\Help\DatabaseUsers.aspx" />
+    <Content Include="SqlAdmin\Help\Default.aspx" />
+    <Content Include="SqlAdmin\Help\DeleteColumn.aspx" />
+    <Content Include="SqlAdmin\Help\DeleteDatabase.aspx" />
+    <Content Include="SqlAdmin\Help\DeleteStoredProcedure.aspx" />
+    <Content Include="SqlAdmin\Help\DeleteTable.aspx" />
+    <Content Include="SqlAdmin\Help\EditColumn.aspx" />
+    <Content Include="SqlAdmin\Help\EditStoredProcedure.aspx" />
+    <Content Include="SqlAdmin\Help\Error.aspx" />
+    <Content Include="SqlAdmin\Help\Export.aspx" />
+    <Content Include="SqlAdmin\Help\HelpFooter.ascx" />
+    <Content Include="SqlAdmin\Help\HelpHeader.ascx" />
+    <Content Include="SqlAdmin\Help\Import.aspx" />
+    <Content Include="SqlAdmin\Help\Login.aspx" />
+    <Content Include="SqlAdmin\Help\QueryDatabase.aspx" />
+    <Content Include="SqlAdmin\Help\RenameTable.aspx" />
+    <Content Include="SqlAdmin\Help\Security.aspx" />
+    <Content Include="SqlAdmin\Help\ServerLogins.aspx" />
+    <Content Include="SqlAdmin\Help\ServerRoles.aspx" />
+    <Content Include="SqlAdmin\Help\StoredProcedures.aspx" />
+    <Content Include="SqlAdmin\Help\Tables.aspx" />
+    <Content Include="SqlAdmin\Help\TOC.inc" />
+    <Content Include="SqlAdmin\images\bg_adminTool.gif" />
+    <Content Include="SqlAdmin\images\bg_horizontal_bottom.gif" />
+    <Content Include="SqlAdmin\images\bg_horizontal_dark.gif" />
+    <Content Include="SqlAdmin\images\bg_horizontal_top.gif" />
+    <Content Include="SqlAdmin\images\bg_left.gif" />
+    <Content Include="SqlAdmin\images\bg_left_bar.gif" />
+    <Content Include="SqlAdmin\images\Black_Line.gif" />
+    <Content Include="SqlAdmin\images\Blue_Back.gif" />
+    <Content Include="SqlAdmin\images\Blue_Back_Right.gif" />
+    <Content Include="SqlAdmin\images\Blue_Dotted_Line.gif" />
+    <Content Include="SqlAdmin\images\Button_Back.gif" />
+    <Content Include="SqlAdmin\images\checkmark.gif" />
+    <Content Include="SqlAdmin\images\checknomark.gif" />
+    <Content Include="SqlAdmin\images\darkBlue.gif" />
+    <Content Include="SqlAdmin\images\darkGray.gif" />
+    <Content Include="SqlAdmin\images\dbs_ico.gif" />
+    <Content Include="SqlAdmin\images\db_ico.gif" />
+    <Content Include="SqlAdmin\images\grayDivide.gif" />
+    <Content Include="SqlAdmin\images\help.gif" />
+    <Content Include="SqlAdmin\images\key.gif" />
+    <Content Include="SqlAdmin\images\logout.gif" />
+    <Content Include="SqlAdmin\images\Logo_Bottom.gif" />
+    <Content Include="SqlAdmin\images\Logo_Top.gif" />
+    <Content Include="SqlAdmin\images\navy.gif" />
+    <Content Include="SqlAdmin\images\New.gif" />
+    <Content Include="SqlAdmin\images\paleYellow.gif" />
+    <Content Include="SqlAdmin\images\prop_ico.gif" />
+    <Content Include="SqlAdmin\images\Query_Ico.gif" />
+    <Content Include="SqlAdmin\images\Roles_Ico.gif" />
+    <Content Include="SqlAdmin\images\ServerLogins_S_Ico.gif" />
+    <Content Include="SqlAdmin\images\ServerRoles_Ico.gif" />
+    <Content Include="SqlAdmin\images\Server_Ico.gif" />
+    <Content Include="SqlAdmin\images\Server_Logins.gif" />
+    <Content Include="SqlAdmin\images\Server_Roles.gif" />
+    <Content Include="SqlAdmin\images\skyBlue.gif" />
+    <Content Include="SqlAdmin\images\spacer.gif" />
+    <Content Include="SqlAdmin\images\Sproc_Ico.gif" />
+    <Content Include="SqlAdmin\images\Table_Ico.gif" />
+    <Content Include="SqlAdmin\images\transparent.gif" />
+    <Content Include="SqlAdmin\images\User_Ico.gif" />
+    <Content Include="SqlAdmin\images\Wizards_Ico.gif" />
+    <Content Include="SqlAdmin\Import.aspx" />
+    <Content Include="SqlAdmin\LoginRolePicker.ascx" />
+    <Content Include="SqlAdmin\Logout.aspx" />
+    <Content Include="SqlAdmin\QueryDatabase.aspx" />
+    <Content Include="SqlAdmin\RenameTable.aspx" />
+    <Content Include="SqlAdmin\Security.aspx" />
+    <Content Include="SqlAdmin\ServerLogins.aspx" />
+    <Content Include="SqlAdmin\ServerRoles.aspx" />
+    <Content Include="SqlAdmin\SqlAdmin.dll" />
+    <Content Include="SqlAdmin\StoredProcedures.aspx" />
+    <Content Include="SqlAdmin\Tables.aspx" />
+    <Content Include="SqlAdmin\Toolbars\DatabaseLocation.ascx" />
+    <Content Include="SqlAdmin\Toolbars\DatabaseToolbar.ascx" />
+    <Content Include="SqlAdmin\Toolbars\HelpLogoutToolbar.ascx" />
+    <Content Include="SqlAdmin\Toolbars\ServerLocation.ascx" />
+    <Content Include="SqlAdmin\Toolbars\ServerToolbar.ascx" />
+    <Content Include="SqlAdmin\Toolbars\TableLocation.ascx" />
+    <Content Include="SqlAdmin\Toolbars\WebForm1.aspx" />
+    <Content Include="Web.config" />
+    <EmbeddedResource Include="Global.asax.resx">
+      <DependentUpon>Global.asax.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="index.aspx.resx">
+      <DependentUpon>index.aspx.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SqlAdmin\Columns.aspx.resx">
+      <DependentUpon>Columns.aspx.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SqlAdmin\CreateDatabase.aspx.resx">
+      <DependentUpon>CreateDatabase.aspx.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SqlAdmin\CreateDatabaseRole.aspx.resx">
+      <DependentUpon>CreateDatabaseRole.aspx.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SqlAdmin\CreateDatabaseUser.aspx.resx">
+      <DependentUpon>CreateDatabaseUser.aspx.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SqlAdmin\CreateLogin.aspx.resx">
+      <DependentUpon>CreateLogin.aspx.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SqlAdmin\CreateStoredProcedure.aspx.resx">
+      <DependentUpon>CreateStoredProcedure.aspx.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SqlAdmin\DatabaseRoles.aspx.resx">
+      <DependentUpon>DatabaseRoles.aspx.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SqlAdmin\Databases.aspx.resx">
+      <DependentUpon>Databases.aspx.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SqlAdmin\DatabaseUsers.aspx.resx">
+      <DependentUpon>DatabaseUsers.aspx.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SqlAdmin\Default.aspx.resx">
+      <DependentUpon>Default.aspx.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SqlAdmin\DeleteDatabaseRole.aspx.resx">
+      <DependentUpon>DeleteDatabaseRole.aspx.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SqlAdmin\DeleteDatabaseUser.aspx.resx">
+      <DependentUpon>DeleteDatabaseUser.aspx.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SqlAdmin\EditDatabaseRole.aspx.resx">
+      <DependentUpon>EditDatabaseRole.aspx.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SqlAdmin\EditDatabaseUser.aspx.resx">
+      <DependentUpon>EditDatabaseUser.aspx.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SqlAdmin\EditServerLogin.aspx.resx">
+      <DependentUpon>EditServerLogin.aspx.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SqlAdmin\EditServerRole.aspx.resx">
+      <DependentUpon>EditServerRole.aspx.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SqlAdmin\Help\DatabaseRoles.aspx.resx">
+      <DependentUpon>DatabaseRoles.aspx.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SqlAdmin\Help\DatabaseUsers.aspx.resx">
+      <DependentUpon>DatabaseUsers.aspx.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SqlAdmin\Help\ServerLogins.aspx.resx">
+      <DependentUpon>ServerLogins.aspx.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SqlAdmin\Help\ServerRoles.aspx.resx">
+      <DependentUpon>ServerRoles.aspx.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SqlAdmin\licenses.licx" />
+    <EmbeddedResource Include="SqlAdmin\LoginRolePicker.ascx.resx">
+      <DependentUpon>LoginRolePicker.ascx.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SqlAdmin\QueryDatabase.aspx.resx">
+      <DependentUpon>QueryDatabase.aspx.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SqlAdmin\Security.aspx.resx">
+      <DependentUpon>Security.aspx.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SqlAdmin\ServerLogins.aspx.resx">
+      <DependentUpon>ServerLogins.aspx.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SqlAdmin\ServerRoles.aspx.resx">
+      <DependentUpon>ServerRoles.aspx.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SqlAdmin\Tables.aspx.resx">
+      <DependentUpon>Tables.aspx.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SqlAdmin\Toolbars\DatabaseToolbar.ascx.resx">
+      <DependentUpon>DatabaseToolbar.ascx.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SqlAdmin\Toolbars\ServerToolbar.ascx.resx">
+      <DependentUpon>ServerToolbar.ascx.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SqlAdmin\Toolbars\WebForm1.aspx.resx">
+      <DependentUpon>WebForm1.aspx.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <None Include="SqlAdmin\images\psd\Databases_Icon.psd" />
+    <None Include="SqlAdmin\images\psd\Database_Icon.psd" />
+    <None Include="SqlAdmin\images\psd\Properties_icon.psd" />
+    <None Include="SqlAdmin\images\psd\Query_Icon.psd" />
+    <None Include="SqlAdmin\images\psd\Roles_Icon.psd" />
+    <None Include="SqlAdmin\images\psd\ServerLogins_Small_Ico.psd" />
+    <None Include="SqlAdmin\images\psd\ServerRoles_Small_Icon.psd" />
+    <None Include="SqlAdmin\images\psd\Server_Icon.psd" />
+    <None Include="SqlAdmin\images\psd\Server_Logins.psd" />
+    <None Include="SqlAdmin\images\psd\Server_Roles.psd" />
+    <None Include="SqlAdmin\images\psd\Sproc_Icon.psd" />
+    <None Include="SqlAdmin\images\psd\Table_Icon.psd" />
+    <None Include="SqlAdmin\images\psd\User_Icon.psd" />
+    <None Include="SqlAdmin\images\psd\Wizards_Icon.psd" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v9.0\WebApplications\Microsoft.WebApplication.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>1030</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost/SqlServerAdmin</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>
