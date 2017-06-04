@@ -1,5 +1,5 @@
 <%@ Page language="c#" Codebehind="index.aspx.cs" AutoEventWireup="True" Inherits="wxd_web.index" %>
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" >
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" >    
 <HTML>
 	<HEAD>
 		<title>index</title>
@@ -12,7 +12,7 @@
 		<form id="Form1" method="post" runat="server">
 			<FONT face="宋体">
 				<asp:HyperLink id="HyperLink1" style="Z-INDEX: 101; LEFT: 88px; POSITION: absolute; TOP: 136px"
-					runat="server" NavigateUrl="SqlAdmin/Default.aspx">进入</asp:HyperLink></FONT>
+					runat="server" NavigateUrl="SqlAdmin/Default.aspx">进入123123</asp:HyperLink></FONT>
 		</form>
 	</body>
 </HTML>
